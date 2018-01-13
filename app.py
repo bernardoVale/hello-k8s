@@ -4,8 +4,9 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-if os.getenv('APP_CONFIG'):
-    app.config.from_envvar('APP_CONFIG')
+app_config = os.getenv('APP_CONFIG')
+if app_config:
+    app.config.from_envvar(app_config)
 else:
     app_env = os.getenv('APP_ENV', 'Dev')
     app.config.from_object("config.{}Config".format(app_env))
@@ -30,4 +31,5 @@ def version():
 
 
 if __name__ == '__main__':
+    os.getenv('')
     app.run(host="0.0.0.0", port=app.config['PORT'], debug=app.config['DEBUG'])
