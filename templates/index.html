@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello Kubernetes</title>
+    <meta charset="utf-8">
+    <style>
+
+      body {
+        background-color: rgb(100, 192, 69);
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+        font-size: 50px;
+        text-align: center;
+      }
+      h4 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+        font-size: 35px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{ greeting }}</h1>
+    <div>
+        <h4>You're running on {{ hostname }}</h4>
+    </div>
+  </body>
+</html>

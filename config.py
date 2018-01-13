@@ -1,6 +1,3 @@
-import subprocess
-
-
 class Config(object):
     SECRET_KEY = 'YmVybmFyZG8gZSBmb2RhbyBlIHRyYW5zYWRvci4gTmFvIG1leGUgY29tIGVsZQ=='
     WTF_CSRF_ENABLED = False
@@ -12,8 +9,6 @@ class Config(object):
 
     with open('version.txt') as stream:
         APP_VERSION = stream.read()
-
-    HOSTNAME = subprocess.check_output("hostname").strip().decode('utf-8')
 
 
 class ProductionConfig(Config):
