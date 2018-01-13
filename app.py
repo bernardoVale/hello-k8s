@@ -16,7 +16,12 @@ HOSTNAME = subprocess.check_output("hostname").strip().decode('utf-8')
 @app.route('/')
 def index():
     greeting = "Hello there! Hope you're enjoying Kubernetes!"
-    return render_template('index.html', greeting=greeting, hostname=HOSTNAME)
+    try:
+        color = app.config['BACKGROUND_COLOR']
+    except KeyError:
+        color = 'white;'
+    return render_template('index.html', greeting=greeting, hostname=HOSTNAME,
+                           color=color)
 
 
 @app.route('/version')
